@@ -1,13 +1,13 @@
 import express from 'express'
+import { resolve } from 'path'
 import React from 'react'
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
 import { matchRoutes } from 'react-router-config'
 import { Provider } from 'react-redux'
-import { resolve } from 'path'
 import App from '../client/components/app'
 import routes from '../client/routes'
-import configureStore from '../client/redux/store'
+import configureStore from '../client/store'
 import Html from './utils/Html'
 
 const app = express()
@@ -63,7 +63,6 @@ app.get('*', (req, res) => {
       if (routerContext.url) {
         res.status(301).setHeader('Location', routerContext.url)
         res.end()
-
         return
       }
 
@@ -76,7 +75,7 @@ app.get('*', (req, res) => {
     .catch(err => {
       res.status(404).send('Not Found :(')
 
-      console.error(`==> 😭  Rendering routes error: ${err}`)
+      console.error(`==> Rendering routes error: ${err}`)
     })
 })
 

@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const Webpack_isomorphic_tools_plugin = require('webpack-isomorphic-tools/plugin')
 const paths = require('./paths')
 const isomorphicConfig = require('./isomorphic-config')
-
+const argv = require('minimist')
 const nodeEnv = process.env.NODE_ENV || 'development'
 const isDev = nodeEnv !== 'production'
 
@@ -23,7 +23,10 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: paths.appBuild,
-    publicPath: 'http://localhost:4000/build/'
+    publicPath:
+      argv(process.argv.slice(2)).client === 'only'
+        ? '/'
+        : 'http://localhost:4000/build/'
   },
   module: {
     rules: [

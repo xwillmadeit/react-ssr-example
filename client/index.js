@@ -1,15 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader'
+import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
-import logger from 'redux-logger'
+import configureStore from './store'
 import App from './components/app'
-import configureStore from './redux/store'
 
-const store = configureStore()
+// 获取服务端渲染初始化 state
+const initialState = window.__INITIAL_STATE__
+const store = configureStore(initialState)
 
 const render = Component => {
   ReactDOM.render(

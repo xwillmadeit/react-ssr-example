@@ -2,6 +2,8 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import _ from 'lodash'
 import routes from '../routes'
+import leopard from '../images/leopard.png'
+import '../scss/main.scss'
 
 export default () => {
   const routeWithSubRoutes = route =>
@@ -15,7 +17,8 @@ export default () => {
   return (
     <div>
       <div>
-        <h1>hello server side rendering</h1>
+        <h1>hello server side rendering...</h1>
+        <img src={leopard} />
       </div>
       <hr />
       <Switch>

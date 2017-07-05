@@ -4,7 +4,12 @@
     "vendor": "http://localhost:4000/build/vendor.bundle.js"
   },
   "styles": {},
-  "assets": {},
+  "assets": {
+    "./client/images/leopard.png": "http://localhost:4000/build/images/leopard.png",
+    "./client/scss/main.scss": {
+      "_style": "html,\nbody {\n  width: 100%;\n  height: 100%; }\n\nbody {\n  background-color: salmon; }\n"
+    }
+  },
   "webpack": {
     "version": "3.0.0"
   }
