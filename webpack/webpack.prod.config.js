@@ -70,6 +70,9 @@ module.exports = {
     new webpack.DefinePlugin({
       __DEV__: false
     }),
+    new webpack.ProvidePlugin({
+      Promise: 'es6-promise-promise'
+    }),
     webpack_isomorphic_tools_plugin
   ]
 }

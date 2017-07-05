@@ -61,11 +61,14 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    webpack_isomorphic_tools_plugin,
     new webpack.DefinePlugin({
       __CLIENT__: true,
       __SERVER__: false,
       __DEV__: isDev
-    })
+    }),
+    new webpack.ProvidePlugin({
+      Promise: 'es6-promise-promise'
+    }),
+    webpack_isomorphic_tools_plugin
   ]
 }
