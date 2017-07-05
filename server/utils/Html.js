@@ -22,7 +22,6 @@ const Html = ({ store, htmlContent }) => {
           <link
             key={_.uniqueId()}
             href={assets.styles[style]}
-            media="screen, projection"
             rel="stylesheet"
             type="text/css"
           />
@@ -46,6 +45,7 @@ const Html = ({ store, htmlContent }) => {
           }}
         />
 
+        <script src={assets.javascript.manifest} />
         <script src={assets.javascript.vendor} />
         <script src={assets.javascript.app} />
       </body>

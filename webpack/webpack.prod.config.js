@@ -63,10 +63,13 @@ module.exports = {
       template: paths.appHtml
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['common', 'vendor'],
+      names: ['common', 'vendor', 'manifest'],
       minChunks: 2
     }),
     new ExtractTextPlugin('css/style.[contenthash:8].css'),
+    new webpack.DefinePlugin({
+      __DEV__: false
+    }),
     webpack_isomorphic_tools_plugin
   ]
 }

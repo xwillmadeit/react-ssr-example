@@ -28,5 +28,5 @@ if (argv(process.argv.slice(2)).client === 'only') {
 const PORT = process.env.PORT || 4000
 
 app.listen(PORT, () => {
-  console.log(`app is running at ${PORT}`)
+  console.log(`frontend dev server is running at ${PORT}`)
 })

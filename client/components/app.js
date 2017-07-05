@@ -17,7 +17,7 @@ export default () => {
   return (
     <div>
       <div>
-        <h1>hello server side rendering...</h1>
+        <h1>hello server side rendering!</h1>
         <img src={leopard} />
       </div>
       <hr />

@@ -1,16 +1,19 @@
 {
   "javascript": {
-    "app": "http://localhost:4000/build/app.bundle.js",
-    "vendor": "http://localhost:4000/build/vendor.bundle.js"
+    "vendor": "/build/js/vendor.30e667c1.js",
+    "app": "/build/js/app.0da5ce49.js",
+    "manifest": "/build/js/manifest.8c507a03.js"
   },
-  "styles": {},
+  "styles": {
+    "app": "/build/css/style.86df229a.css"
+  },
   "assets": {
-    "./client/images/leopard.png": "http://localhost:4000/build/images/leopard.png",
+    "./client/images/leopard.png": "/build/images/leopard.png",
     "./client/scss/main.scss": {
-      "_style": "html,\nbody {\n  width: 100%;\n  height: 100%; }\n\nbody {\n  background-color: salmon; }\n"
+      "_style": "body,html{width:100%;height:100%}body{background-color:salmon}"
     }
   },
   "webpack": {
-    "version": "3.0.0"
+    "version": "2.6.1"
   }
 }
